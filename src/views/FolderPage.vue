@@ -6,30 +6,85 @@
           <ion-menu-button color="primary"></ion-menu-button>
         </ion-buttons>
         <ion-title>{{ $route.params.id }}</ion-title>
+        <ion-buttons
+          id="trigger-button"
+          size="small"
+          slot="end"
+          class="ion-margin-end"
+        >
+          <ion-avatar slot="start" size="small">
+            <img src="https://gravatar.com/avatar" />
+          </ion-avatar>
+        </ion-buttons>
+        <ion-modal
+          :breakpoints="[0.0, 0.4, 0.9]"
+          :initialBreakpoint="0.4"
+          trigger="trigger-button"
+        >
+          <ion-content>
+            <ion-list>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <img src="https://gravatar.com/avatar/" />
+                </ion-avatar>
+                <ion-label>Alle</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <img
+                    src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+                  />
+                </ion-avatar>
+                <ion-label>Kay</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <img
+                    src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+                  />
+                </ion-avatar>
+                <ion-label>Ben</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <img
+                    src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
+                  />
+                </ion-avatar>
+                <ion-label>Hannah</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-content>
+        </ion-modal>
       </ion-toolbar>
     </ion-header>
-    
+
     <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">{{ $route.params.id }}</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    
-      <div id="container">
-        <strong class="capitalize">{{ $route.params.id }}</strong>
-        <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-      </div>
+      <add-ascent-view />
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { defineComponent } from "vue";
+import {
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonMenuButton,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonAvatar,
+  IonModal,
+  IonLabel,
+  IonList,
+  IonItem,
+} from "@ionic/vue";
+import AddAscentView from "./AddAscentView.vue";
 
 export default defineComponent({
-  name: 'FolderPage',
+  name: "FolderPage",
   components: {
     IonButtons,
     IonContent,
@@ -37,12 +92,22 @@ export default defineComponent({
     IonMenuButton,
     IonPage,
     IonTitle,
-    IonToolbar
-  }
+    IonToolbar,
+    IonAvatar,
+    IonModal,
+    IonLabel,
+    IonList,
+    IonItem,
+    AddAscentView,
+  },
 });
 </script>
 
 <style scoped>
+ion-avatar {
+  width: 40px;
+  height: 40px;
+}
 #container {
   text-align: center;
   position: absolute;
