@@ -2,7 +2,7 @@
   <ion-text color="dark">
     <ion-item-group>
       <ion-item-divider>
-        <ion-label>Weg</ion-label>
+        <ion-label>Wo?</ion-label>
       </ion-item-divider>
       <ion-item>
         <ion-label>Gebiet:</ion-label>
@@ -29,7 +29,7 @@
         >
       </ion-item>
       <ion-item-divider>
-        <ion-label>Seilgruppe</ion-label>
+        <ion-label>Wer?</ion-label>
       </ion-item-divider>
       <ion-item>
         <ion-label>Vorstieg:</ion-label>
@@ -46,6 +46,7 @@
       <ion-item>
         <ion-label>Weitere:</ion-label>
 
+      <ion-item>
         <ion-avatar class="avatar">
           <img
             src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
@@ -66,9 +67,42 @@
             src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"
           />
         </ion-avatar>
+</ion-item>
       </ion-item>
+      <ion-item-divider>
+        <ion-label>Wann?</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Datum:</ion-label>
+        <ion-buttons id="trigger-date" size="small" class="ion-margin-end">
+          <ion-chip>
+            <ion-label>16.04.2022</ion-label>
+          </ion-chip></ion-buttons
+        >
+      </ion-item>
+      <ion-item-divider>
+        <ion-label>Wie?</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-label>Hinweise:</ion-label>
+          <ion-chip>
+            <ion-label>Solo</ion-label>
+          </ion-chip>
+          <ion-chip>
+          <ion-label>Teilversuch</ion-label>
+          </ion-chip>
+      </ion-item>
+      <ion-row style="height: 50px"></ion-row>
+      <ion-button color="primary" shape="round" expand="block">Hinzufuegen</ion-button>
     </ion-item-group>
   </ion-text>
+  <ion-modal
+    :breakpoints="[0.0, 0.4, 0.9]"
+    :initialBreakpoint="0.4"
+    trigger="trigger-date"
+  >
+ <ion-datetime></ion-datetime>
+  </ion-modal>
   <ion-modal
     :breakpoints="[0.0, 0.4, 0.9]"
     :initialBreakpoint="0.4"
@@ -86,11 +120,6 @@ import { defineComponent } from "vue";
 import {
   IonButtons,
   IonContent,
-  IonHeader,
-  IonMenuButton,
-  IonPage,
-  IonTitle,
-  IonToolbar,
   IonAvatar,
   IonModal,
   IonLabel,
@@ -101,6 +130,7 @@ import {
   IonItemGroup,
   IonChip,
   IonItemDivider,
+  IonDatetime,
 } from "@ionic/vue";
 
 export default defineComponent({
@@ -118,6 +148,7 @@ export default defineComponent({
     IonChip,
     IonLabel,
     IonItemDivider,
+  IonDatetime,
   },
 });
 </script>

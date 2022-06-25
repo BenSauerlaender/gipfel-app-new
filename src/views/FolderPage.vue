@@ -60,7 +60,8 @@
     </ion-header>
 
     <ion-content :fullscreen="true">
-      <add-ascent-view />
+      <add-ascent-view v-if='$route.params.id === "Outbox"'/>
+      <begehungen v-if='$route.params.id === "Favorites"'/>
     </ion-content>
   </ion-page>
 </template>
@@ -82,6 +83,7 @@ import {
   IonItem,
 } from "@ionic/vue";
 import AddAscentView from "./AddAscentView.vue";
+import Begehungen from "./AddAscentView2.vue";
 
 export default defineComponent({
   name: "FolderPage",
@@ -99,6 +101,7 @@ export default defineComponent({
     IonList,
     IonItem,
     AddAscentView,
+    Begehungen,
   },
 });
 </script>
