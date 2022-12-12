@@ -1,7 +1,7 @@
 <template>
   <ion-text color="dark">
     <ion-item-group>
-     <ion-card v-for="i in 10">
+     <ion-card v-for="i in 10" :key="i">
     <ion-card-header>
       <ion-card-subtitle class="ion-justify-content-between">
         Falkenstein
@@ -51,37 +51,21 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import {
-  IonButtons,
-  IonContent,
   IonAvatar,
-  IonModal,
   IonLabel,
-  IonList,
-  IonItem,
-  IonSearchbar,
   IonText,
   IonItemGroup,
   IonChip,
-  IonItemDivider,
-  IonDatetime,
 } from "@ionic/vue";
 
 export default defineComponent({
   name: "AddAscentView",
   components: {
-    IonContent,
-    IonSearchbar,
-    IonList,
-    IonModal,
     IonText,
     IonItemGroup,
     IonAvatar,
-    IonItem,
-    IonButtons,
     IonChip,
     IonLabel,
-    IonItemDivider,
-  IonDatetime,
   },
 });
 </script>
